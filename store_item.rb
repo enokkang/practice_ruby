@@ -20,3 +20,36 @@ item3 = { :color => "green", :price => 300, :name => "Cup" }
 puts "#{item1[:color]} #{item1[:price]} #{item1[:name]}"
 puts "#{item2[:color]} #{item2[:price]} #{item2[:name]}"
 puts "#{item3[:color]} #{item3[:price]} #{item3[:name]}"
+
+class Item
+  def initialize(input_color, input_price, input_name)
+    @color = input_color
+    @price = input_price
+    @name = input_name
+  end
+
+  def color
+    @color
+  end
+
+  def price
+    @price
+  end
+
+  def name
+    @name
+  end
+
+  def set_price(new_price)
+    @price = new_price
+  end
+
+  def print_info
+    puts "#{color} #{price} #{name}"
+  end
+end
+
+item4 = Item.new("Red", 100, "T-Shirt")
+item4.print_info
+item4.set_price(400)
+item4.print_info
