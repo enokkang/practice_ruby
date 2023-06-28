@@ -1,5 +1,10 @@
 #Inheritance Example
 class Operation
+  def initialize
+    @speed = 0
+    @direction = "north"
+  end
+
   def brake
     @speed = 0
   end
@@ -14,22 +19,12 @@ class Operation
 end
 
 class Car < Operation
-  def initialize
-    @speed = 0
-    @direction = "north"
-  end
-
   def honk_horn
     puts "Beeeeeeep!"
   end
 end
 
 class Bike < Operation
-  def initialize
-    @speed = 0
-    @direction = "north"
-  end
-
   def ring_bell
     puts "Ring ring!"
   end
