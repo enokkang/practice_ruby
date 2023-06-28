@@ -1,6 +1,6 @@
 #Inheritance Example
-class Operation
-  def initialize
+class Vehicle
+  def initialize(input_options)
     @speed = 0
     @direction = "north"
   end
@@ -18,20 +18,35 @@ class Operation
   end
 end
 
-class Car < Operation
+class Car < Vehicle
+  def initialize(input_options)
+    super
+    @fuel = input_options[:fuel]
+    @make = input_options[:make]
+    @model = input_options[:model]
+  end
+
   def honk_horn
     puts "Beeeeeeep!"
   end
 end
 
-class Bike < Operation
+class Bike < Vehicle
+  def initialize(input_options)
+    super
+    @type = input_options[:type]
+    @weight = input_options[:weight]
+  end
+
   def ring_bell
     puts "Ring ring!"
   end
 end
 
-car1 = Car.new
+car1 = Car.new(fuel: "gas", make: "Honda", model: "Civic")
 car1.honk_horn
+p car1
 
-bike1 = Bike.new
+bike1 = Bike.new(type: "electric", weight: "100")
 bike1.ring_bell
+p bike1
