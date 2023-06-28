@@ -22,27 +22,32 @@ puts "#{item2[:color]} #{item2[:price]} #{item2[:name]}"
 puts "#{item3[:color]} #{item3[:price]} #{item3[:name]}"
 
 class Item
+  #reader method shortcuts
+  attr_reader :color, :price, :name
+  #writer method shortcuts
+  attr_writer :price
+
   def initialize(input_color, input_price, input_name)
     @color = input_color
     @price = input_price
     @name = input_name
   end
 
-  def color
-    @color
-  end
+  #  def color
+  #    @color
+  #  end
 
-  def price
-    @price
-  end
+  #  def price
+  #    @price
+  #  end
 
-  def name
-    @name
-  end
+  #  def name
+  #    @name
+  #  end
 
-  def set_price(new_price)
-    @price = new_price
-  end
+  #def set_price(new_price)
+  #  @price = new_price
+  #end
 
   def print_info
     puts "#{color} #{price} #{name}"
@@ -51,5 +56,6 @@ end
 
 item4 = Item.new("Red", 100, "T-Shirt")
 item4.print_info
-item4.set_price(400)
+#item4.set_price(400)
+item4.price = 500
 item4.print_info

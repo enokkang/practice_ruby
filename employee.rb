@@ -21,6 +21,9 @@ puts "#{employee2[:first_name]} #{employee2[:last_name]} makes #{employee2[:sala
 
 # Represent employee data as a class instance
 class Employee
+  attr_reader :first_name, :last_name, :active
+  attr_writer :active
+
   def initialize(input_first_name, input_last_name, input_salary, input_active)
     @first_name = input_first_name
     @last_name = input_last_name
