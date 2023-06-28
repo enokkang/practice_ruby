@@ -21,6 +21,8 @@ puts "#{item1[:color]} #{item1[:price]} #{item1[:name]}"
 puts "#{item2[:color]} #{item2[:price]} #{item2[:name]}"
 puts "#{item3[:color]} #{item3[:price]} #{item3[:name]}"
 
+puts "\n"
+
 class Item
   #reader method shortcuts
   attr_reader :color, :price, :name
