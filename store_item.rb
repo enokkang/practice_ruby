@@ -27,10 +27,18 @@ class Item
   #writer method shortcuts
   attr_writer :price
 
-  def initialize(input_color, input_price, input_name)
-    @color = input_color
-    @price = input_price
-    @name = input_name
+  #def initialize(input_color, input_price, input_name)
+  #  @color = input_color
+  #  @price = input_price
+  #  @name = input_name
+  #end
+
+  #new initialize method with hashes
+  #hash is good bc it is searching by a key. array is memorizing orders
+  def initialize(input_options)
+    @color = input_options[:color]
+    @price = input_options[:price]
+    @name = input_options[:name]
   end
 
   #  def color
@@ -54,7 +62,10 @@ class Item
   end
 end
 
-item4 = Item.new("Red", 100, "T-Shirt")
+#item4 = Item.new("Red", 100, "T-Shirt")
+
+item4 = Item.new(color: "Red", price: 100, name: "T-Shirt")
+
 item4.print_info
 #item4.set_price(400)
 item4.price = 500
