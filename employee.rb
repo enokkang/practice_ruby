@@ -28,6 +28,18 @@ class Employee
     @active = input_active
   end
 
+  def first_name
+    @first_name
+  end
+
+  def last_name
+    @last_name
+  end
+
+  def active
+    @active
+  end
+
   def print_info
     puts "#{@first_name} #{@last_name} makes #{@salary} dollars a year."
   end
@@ -43,3 +55,7 @@ employee1.print_info
 employee2.print_info
 employee1.give_annual_raise
 employee1.print_info
+
+p employee1.first_name
+p employee1.last_name
+p employee1.active
