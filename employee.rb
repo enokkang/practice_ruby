@@ -24,11 +24,20 @@ class Employee
   attr_reader :first_name, :last_name, :active
   attr_writer :active
 
-  def initialize(input_first_name, input_last_name, input_salary, input_active)
-    @first_name = input_first_name
-    @last_name = input_last_name
-    @salary = input_salary
-    @active = input_active
+  #  def initialize(input_first_name, input_last_name, input_salary, input_active)
+  #    @first_name = input_first_name
+  #    @last_name = input_last_name
+  #    @salary = input_salary
+  #    @active = input_active
+  #  end
+
+  #new initialize method with hashes
+  #hash is good bc it is searching by a key. array is memorizing orders
+  def initialize(input_options)
+    @first_name = input_options[:first_name]
+    @last_name = input_options[:last_name]
+    @salary = input_options[:salary]
+    @active = input_options[:active]
   end
 
   #reader method returns first_name:
@@ -60,8 +69,15 @@ class Employee
   end
 end
 
-employee1 = Employee.new("Majora", "Carter", 80000, true)
-employee2 = Employee.new("Danilo", "Campos", 70000, true)
+#employee1 = Employee.new("Majora", "Carter", 80000, true)
+
+#passing in a hash of data with {}
+employee1 = Employee.new({ first_name: "Majora", last_name: "Carter", salary: 80000, active: true })
+
+#employee2 = Employee.new("Danilo", "Campos", 70000, true)
+#this is also a has without {}. ruby doesn't care.
+employee2 = Employee.new(first_name: "Danilo", last_name: "Campos", salary: 70000, active: true)
+
 employee1.print_info
 employee2.print_info
 employee1.give_annual_raise
